@@ -14,6 +14,7 @@ depends-top-level:
 - !private "=="
 - "Array"
 - "AssignmentPrecedence"
+- "CGFloat"
 - "CastingPrecedence"
 - !private "CurrentWeatherTableViewCell"
 - "FloatLiteralType"
@@ -389,6 +390,7 @@ depends-member:
 - !private ["So21NSItemProviderWritingP", "utf16"]
 - !private ["So16NSMutableCopyingP", "subscript"]
 - !private ["So16NSMutableCopyingP", "utf16"]
+- ["So8NSObjectC", "CGFloat"]
 - !private ["So8NSObjectC", "CurrentWeatherTableViewCell"]
 - ["So8NSObjectC", "EditingStyle"]
 - ["So8NSObjectC", "IndexPath"]
@@ -655,6 +657,7 @@ depends-member:
 - !private ["So30UIPasteConfigurationSupportingP", "termList"]
 - !private ["So30UIPasteConfigurationSupportingP", "viewDidLoad"]
 - !private ["So30UIPasteConfigurationSupportingP", "weatherItems"]
+- ["So11UIResponderC", "CGFloat"]
 - !private ["So11UIResponderC", "CurrentWeatherTableViewCell"]
 - ["So11UIResponderC", "EditingStyle"]
 - ["So11UIResponderC", "IndexPath"]
@@ -764,6 +767,7 @@ depends-member:
 - !private ["So11UITableViewC", "reloadSections"]
 - ["So15UITableViewCellC", "EditingStyle"]
 - !private ["So15UITableViewCellC", "item"]
+- ["So21UITableViewControllerC", "CGFloat"]
 - !private ["So21UITableViewControllerC", "CurrentWeatherTableViewCell"]
 - ["So21UITableViewControllerC", "IndexPath"]
 - !private ["So21UITableViewControllerC", "IndexSet"]
@@ -886,6 +890,7 @@ depends-member:
 - !private ["So6UIViewC", "dequeueReusableCell"]
 - !private ["So6UIViewC", "item"]
 - !private ["So6UIViewC", "reloadSections"]
+- ["So16UIViewControllerC", "CGFloat"]
 - !private ["So16UIViewControllerC", "CurrentWeatherTableViewCell"]
 - ["So16UIViewControllerC", "IndexPath"]
 - !private ["So16UIViewControllerC", "IndexSet"]
@@ -927,6 +932,7 @@ depends-member:
 - !private ["6soaked13WeatherParserC", "init"]
 - !private ["6soaked13WeatherParserC", "parseWeather"]
 - !private ["6soaked20WeatherTableViewCellC", "item"]
+- ["6soaked26WeatherTableViewControllerC", "CGFloat"]
 - !private ["6soaked26WeatherTableViewControllerC", "CurrentWeatherTableViewCell"]
 - ["6soaked26WeatherTableViewControllerC", "IndexPath"]
 - !private ["6soaked26WeatherTableViewControllerC", "IndexSet"]
@@ -1174,4 +1180,4 @@ depends-external:
 - "/Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
 - "/Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
-interface-hash: "f97ff16740ff215d7c0110f5a1bca6a1"
+interface-hash: "a86945ed93766bdcce703c98253d3ced"

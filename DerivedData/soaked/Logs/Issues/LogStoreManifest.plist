@@ -29,7 +29,7 @@
 			<key>uniqueIdentifier</key>
 			<string>477CA69C-64F5-4DE8-B627-BB2F592697DD</string>
 		</dict>
-		<key>B89CA35D-5CFF-49A0-B73F-E49350E3169B</key>
+		<key>5B8E8DFB-85D2-4E70-978F-8ABE3BCADB29</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -38,19 +38,19 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.target.product-type.application</string>
 			<key>fileName</key>
-			<string>B89CA35D-5CFF-49A0-B73F-E49350E3169B.xcactivitylog</string>
+			<string>5B8E8DFB-85D2-4E70-978F-8ABE3BCADB29.xcactivitylog</string>
 			<key>highLevelStatus</key>
 			<string>S</string>
 			<key>signature</key>
 			<string>soaked-dpjrteaaomfoahbhodbdbbazills</string>
 			<key>timeStartedRecording</key>
-			<real>557734365.08974302</real>
+			<real>557738097.68919897</real>
 			<key>timeStoppedRecording</key>
-			<real>557734367.10629499</real>
+			<real>557738098.59974504</real>
 			<key>title</key>
 			<string>Build target soaked</string>
 			<key>uniqueIdentifier</key>
-			<string>B89CA35D-5CFF-49A0-B73F-E49350E3169B</string>
+			<string>5B8E8DFB-85D2-4E70-978F-8ABE3BCADB29</string>
 		</dict>
 		<key>E70BE30A-A98E-4C31-9BAA-D63F2BD33C12</key>
 		<dict>
