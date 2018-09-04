@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>9</integer>
+	<key>logs</key>
+	<dict>
+		<key>477CA69C-64F5-4DE8-B627-BB2F592697DD</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.target.product-type.target</string>
+			<key>fileName</key>
+			<string>477CA69C-64F5-4DE8-B627-BB2F592697DD.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>S</string>
+			<key>signature</key>
+			<string>soaked_WatchKit_Extension-dpjrteaaomfoahbhodbdbbazills</string>
+			<key>timeStartedRecording</key>
+			<real>557538365.55108202</real>
+			<key>timeStoppedRecording</key>
+			<real>557538365.58308399</real>
+			<key>title</key>
+			<string>Build target soaked WatchKit Extension</string>
+			<key>uniqueIdentifier</key>
+			<string>477CA69C-64F5-4DE8-B627-BB2F592697DD</string>
+		</dict>
+		<key>B89CA35D-5CFF-49A0-B73F-E49350E3169B</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.target.product-type.application</string>
+			<key>fileName</key>
+			<string>B89CA35D-5CFF-49A0-B73F-E49350E3169B.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>S</string>
+			<key>signature</key>
+			<string>soaked-dpjrteaaomfoahbhodbdbbazills</string>
+			<key>timeStartedRecording</key>
+			<real>557734365.08974302</real>
+			<key>timeStoppedRecording</key>
+			<real>557734367.10629499</real>
+			<key>title</key>
+			<string>Build target soaked</string>
+			<key>uniqueIdentifier</key>
+			<string>B89CA35D-5CFF-49A0-B73F-E49350E3169B</string>
+		</dict>
+		<key>E70BE30A-A98E-4C31-9BAA-D63F2BD33C12</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.target.product-type.target</string>
+			<key>fileName</key>
+			<string>E70BE30A-A98E-4C31-9BAA-D63F2BD33C12.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>S</string>
+			<key>signature</key>
+			<string>soaked_WatchKit_App-dpjrteaaomfoahbhodbdbbazills</string>
+			<key>timeStartedRecording</key>
+			<real>557733482.83172596</real>
+			<key>timeStoppedRecording</key>
+			<real>557733482.86945105</real>
+			<key>title</key>
+			<string>Build target soaked WatchKit App</string>
+			<key>uniqueIdentifier</key>
+			<string>E70BE30A-A98E-4C31-9BAA-D63F2BD33C12</string>
+		</dict>
+	</dict>
+	<key>preserveOldLogs</key>
+	<true/>
+</dict>
+</plist>

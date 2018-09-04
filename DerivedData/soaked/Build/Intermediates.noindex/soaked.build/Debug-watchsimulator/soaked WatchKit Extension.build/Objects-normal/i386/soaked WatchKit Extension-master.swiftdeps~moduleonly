@@ -1,0 +1,8 @@
+version: "Apple Swift version 4.2 (swiftlang-1000.0.32.1 clang-1000.10.39)"
+options: "c313b34f1b3c6fbd00ccfbbc378f5d67"
+build_time: [1535267075, 725442000]
+inputs:
+  "/Users/colbytimm/Documents/Colby's Folder/Learning/Programming/Swift/soaked/soaked WatchKit Extension/NotificationController.swift": [1535255743, 0]
+  "/Users/colbytimm/Documents/Colby's Folder/Learning/Programming/Swift/soaked/soaked WatchKit Extension/ComplicationController.swift": [1535255743, 0]
+  "/Users/colbytimm/Documents/Colby's Folder/Learning/Programming/Swift/soaked/soaked WatchKit Extension/ExtensionDelegate.swift": [1535255743, 0]
+  "/Users/colbytimm/Documents/Colby's Folder/Learning/Programming/Swift/soaked/soaked WatchKit Extension/InterfaceController.swift": [1535255743, 0]
