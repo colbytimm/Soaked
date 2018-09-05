@@ -163,6 +163,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # define SWIFT_DEPRECATED_OBJC(Msg) SWIFT_DEPRECATED_MSG(Msg)
 #endif
 #if __has_feature(modules)
+@import CoreGraphics;
 @import Foundation;
 @import ObjectiveC;
 @import UIKit;
@@ -198,13 +199,23 @@ SWIFT_CLASS("_TtC6soaked11AppDelegate")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class NSBundle;
+@class UILabel;
 @class NSCoder;
 
-SWIFT_CLASS("_TtC6soaked14ViewController")
-@interface ViewController : UIViewController
-- (void)viewDidLoad;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+SWIFT_CLASS("_TtC6soaked27CurrentWeatherTableViewCell")
+@interface CurrentWeatherTableViewCell : UITableViewCell
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified weatherTypeLbl;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified cityLbl;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified temperatureLbl;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified humidityLbl;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified windLbl;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified dewPointLbl;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified pressureLbl;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified airQualityLbl;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified humidexLbl;
+- (void)awakeFromNib;
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated;
+- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=3.0);
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -220,25 +231,30 @@ SWIFT_CLASS("_TtC6soaked13WeatherParser")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UILabel;
 
 SWIFT_CLASS("_TtC6soaked20WeatherTableViewCell")
 @interface WeatherTableViewCell : UITableViewCell
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified titleLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified conditionLbl;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified highTempLbl;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified lowTempLbl;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified summaryLabel;
-@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified dateLabel;
 - (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=3.0);
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 @class UITableView;
+@class NSBundle;
 
 SWIFT_CLASS("_TtC6soaked26WeatherTableViewController")
 @interface WeatherTableViewController : UITableViewController
 - (void)viewDidLoad;
 - (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView SWIFT_WARN_UNUSED_RESULT;
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (CGFloat)tableView:(UITableView * _Nonnull)tableView heightForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (void)tableView:(UITableView * _Nonnull)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (UITableViewCellEditingStyle)tableView:(UITableView * _Nonnull)tableView editingStyleForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)initWithStyle:(UITableViewStyle)style OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;

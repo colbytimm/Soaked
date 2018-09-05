@@ -13,20 +13,23 @@ class WeatherTableViewController: UITableViewController {
     private var currentWeatherItemsDict: [String:String]?
     private let termList = ["Condition","Temperature","Tendency","Humidity","Humidex","Dewpoint","Wind","Index"]
     
-    var condition = ""
-    var temperature = ""
-    var pressure = ""
-    var visibility = ""
-    var humidity = ""
-    var humidex = ""
-    var dewpoint = ""
-    var wind = ""
-    var airQuality = ""
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         fetchData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated) // No need for semicolon
+        
+        if let tableView = self.view as? UITableView {
+            tableView.backgroundView = UIImageView(image: UIImage(named: "mtns_background"))
+            tableView.contentMode = .scaleAspectFit
+        }
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
     }
     
     func fetchData() {
@@ -83,7 +86,10 @@ class WeatherTableViewController: UITableViewController {
         if indexPath.row == 0 {
             return 400.0
         }
-        return 150
+        else if indexPath.row == 1 {
+            return 100.0
+        }
+        return 130
         
     }
 
@@ -91,7 +97,13 @@ class WeatherTableViewController: UITableViewController {
         
         if indexPath.row == 0 {
             //let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyleUITableViewCell.CellStyle.Default, reuseIdentifier: "MainCell")
-            let cell = tableView.dequeueReusableCell(withIdentifier: "MainCell", for: indexPath) as! CurrentWeatherTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MainCell", for: indexPath) as! MainWeatherTableViewCell
+            return cell
+        }
+            
+        else if indexPath.row == 1 {
+            //let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyleUITableViewCell.CellStyle.Default, reuseIdentifier: "MainCell")
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CurrentCell", for: indexPath) as! CurrentWeatherTableViewCell
             return cell
         }
 
@@ -120,7 +132,12 @@ class WeatherTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return UITableViewCell.EditingStyle.none
     }
     
 
@@ -150,3 +167,5 @@ class WeatherTableViewController: UITableViewController {
     */
 
 }
+
+

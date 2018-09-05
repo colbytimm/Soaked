@@ -15,13 +15,12 @@ enum MainCellState {
 
 class CurrentWeatherTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var weatherTypeLbl:UILabel!
-    @IBOutlet weak var cityLbl:UILabel!
-    @IBOutlet weak var temperatureLbl:UILabel!
     @IBOutlet weak var humidityLbl:UILabel!
     @IBOutlet weak var windLbl:UILabel!
     @IBOutlet weak var dewPointLbl:UILabel!
     @IBOutlet weak var pressureLbl: UILabel!
+    @IBOutlet weak var airQualityLbl: UILabel!
+    @IBOutlet weak var humidexLbl: UILabel!
     
     private var currentWeatherItemsDict: [String:String]?
     
@@ -29,20 +28,17 @@ class CurrentWeatherTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        print(currentWeatherItem.temperature)
         self.currentWeatherItemsDict = UserDefaults.standard.dictionary(forKey: "currentWeather") as? [String:String]
         
         if self.currentWeatherItemsDict != nil {
             for (key, value) in self.currentWeatherItemsDict! {
                 switch key {
-                case "Condition" : weatherTypeLbl?.text = value
-                case "Temperature" : temperatureLbl?.text = value //self.temperature = value
-                case "Tendency" : pressureLbl?.text = value
-                case "Humidity" : humidityLbl?.text = value
-                //case "Humidex" :  = value
-                case "Dewpoint" : dewPointLbl?.text = value
-                case "Wind" : windLbl?.text = value
-                //case "Index" : self.airQuality = value
+                case "Tendency" : if value == "" {pressureLbl?.text = "Pressure: -"} else {pressureLbl?.text = "Pressure:" + value}
+                case "Humidity" : if value == "" {humidityLbl?.text = "Pressure: -"} else {humidityLbl?.text = "Humidity:" + value}
+                case "Humidex" : if value == "" {humidexLbl?.text = "Pressure: -"} else {humidexLbl?.text = "Humidex:" + value}
+                case "Dewpoint" : if value == "" {dewPointLbl?.text = "Pressure: -"} else {dewPointLbl?.text = "Dew Point:" + value}
+                case "Wind" : if value == "" {windLbl?.text = "Pressure: -"} else {windLbl?.text = "Wind:" + value}
+                case "Index" : print("hel" + value + "lo") //if value == "" {airQualityLbl?.text = "Pressure: -"} else {airQualityLbl?.text = "Air Quality:" + value}
                 default : break
                 }
             }

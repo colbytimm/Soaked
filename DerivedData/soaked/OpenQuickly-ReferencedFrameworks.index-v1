@@ -2,12 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <array>
-	<string>XCTest</string>
+	<string>Foundation</string>
+	<string>UIKit</string>
 	<string>UserNotifications</string>
-	<string>soaked</string>
 	<string>WatchKit</string>
 	<string>ClockKit</string>
-	<string>UIKit</string>
-	<string>Foundation</string>
+	<string>soaked</string>
+	<string>XCTest</string>
 </array>
 </plist>

@@ -15,19 +15,44 @@ enum CellState {
 
 class WeatherTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var titleLabel:UILabel!
-    @IBOutlet weak var summaryLabel:UILabel! {
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var conditionLbl: UILabel!
+    @IBOutlet weak var highTempLbl: UILabel!
+    @IBOutlet weak var lowTempLbl: UILabel!
+    @IBOutlet weak var summaryLabel: UILabel! {
         didSet {
-            summaryLabel.numberOfLines = 10
+            summaryLabel.numberOfLines = 4
         }
     }
-    @IBOutlet weak var dateLabel:UILabel!
+    
+    var tempDict: [String:String]?
     
     var item: WeatherItem! {
         didSet {
-            titleLabel.text = item?.title
-            summaryLabel.text = item?.summary
-            dateLabel.text = item?.date
+            if item?.title != nil {
+                let title = item?.title
+                titleLabel.text = trimString(title: title!)
+            }
+            if item?.summary != nil {
+                summaryLabel.text = item?.summary
+            }
+        }
+    }
+    
+    func trimString(title: String) -> String {
+        var str = title
+        if let dotRange = str.range(of: ":") {
+            str.removeSubrange(dotRange.lowerBound..<str.endIndex)
+        }
+        return str
+    }
+    
+    func getTemp(title: String) {
+        var str = title
+        
+        if let dotRange = str.range(of: ".") {
+            str.removeSubrange(dotRange.lowerBound..<str.endIndex)
+            conditionLbl.text = str
         }
     }
 
