@@ -184,20 +184,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
-@class UITableView;
-@class NSBundle;
-@class NSCoder;
-
-SWIFT_CLASS("_TtC6soaked26AddCityTableViewController")
-@interface AddCityTableViewController : UITableViewController
-- (void)viewDidLoad;
-- (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView SWIFT_WARN_UNUSED_RESULT;
-- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)initWithStyle:(UITableViewStyle)style OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-@end
-
 @class UIWindow;
 @class UIApplication;
 
@@ -214,6 +200,7 @@ SWIFT_CLASS("_TtC6soaked11AppDelegate")
 @end
 
 @class UILabel;
+@class NSCoder;
 
 SWIFT_CLASS("_TtC6soaked27CurrentWeatherTableViewCell")
 @interface CurrentWeatherTableViewCell : UITableViewCell
@@ -267,6 +254,8 @@ SWIFT_CLASS("_TtC6soaked20WeatherTableViewCell")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UITableView;
+@class NSBundle;
 
 SWIFT_CLASS("_TtC6soaked26WeatherTableViewController")
 @interface WeatherTableViewController : UITableViewController

@@ -8,10 +8,20 @@
 
 import UIKit
 
+struct FutureWeatherItem {
+    var condition: String
+    var highTemp: String
+    var lowTemp: String
+}
+
 class WeatherTableViewController: UITableViewController {
     private var weatherItems: [WeatherItem]?
     private var currentWeatherItemsDict: [String:String]?
+    private var conditionList: [String] = []
+    private var highList: [String] = []
+    private var lowList: [String] = []
     private let termList = ["Condition","Temperature","Tendency","Humidity","Humidex","Dewpoint","Wind","Index"]
+    private let futureTermList = ["Low","High","Condition"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,11 +30,13 @@ class WeatherTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated) // No need for semicolon
+        super.viewWillAppear(animated)
         
         if let tableView = self.view as? UITableView {
             tableView.backgroundView = UIImageView(image: UIImage(named: "mtns_background"))
-            tableView.contentMode = .scaleAspectFit
+            tableView.autoresizingMask = [.flexibleTopMargin, .flexibleHeight, .flexibleRightMargin, .flexibleLeftMargin, .flexibleTopMargin, .flexibleWidth]
+            tableView.contentMode = .scaleAspectFill
+            tableView.clipsToBounds = true
         }
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
@@ -42,7 +54,7 @@ class WeatherTableViewController: UITableViewController {
             
             self.currentWeatherItemsDict = self.getValue(query: query, terms: self.termList)
             UserDefaults.standard.set(self.currentWeatherItemsDict, forKey: "currentWeather")
-            
+        
             OperationQueue.main.addOperation {
                 self.tableView.reloadSections(IndexSet(integer: 0), with: .left)
             }
@@ -89,7 +101,7 @@ class WeatherTableViewController: UITableViewController {
         else if indexPath.row == 1 {
             return 100.0
         }
-        return 130
+        return 70
         
     }
 
@@ -168,4 +180,12 @@ class WeatherTableViewController: UITableViewController {
 
 }
 
-
+extension String {
+    func slice(from: String, to: String) -> String? {
+        return (range(of: from)?.upperBound).flatMap { substringFrom in
+            (range(of: to, range: substringFrom..<endIndex)?.lowerBound).map { substringTo in
+                String(self[substringFrom..<substringTo])
+            }
+        }
+    }
+}

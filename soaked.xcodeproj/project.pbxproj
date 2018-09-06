@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A605BB9F213F91AB00BD4877 /* MainWeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A605BB9E213F91AB00BD4877 /* MainWeatherTableViewCell.swift */; };
-		A605BBA1213FA63C00BD4877 /* AddCityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A605BBA0213FA63C00BD4877 /* AddCityTableViewController.swift */; };
 		A60D0A6621325C3D001ED3CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60D0A6521325C3D001ED3CF /* AppDelegate.swift */; };
 		A60D0A6B21325C3D001ED3CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A60D0A6921325C3D001ED3CF /* Main.storyboard */; };
 		A60D0A6D21325C3E001ED3CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A60D0A6C21325C3E001ED3CF /* Assets.xcassets */; };
@@ -88,7 +87,6 @@
 
 /* Begin PBXFileReference section */
 		A605BB9E213F91AB00BD4877 /* MainWeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWeatherTableViewCell.swift; sourceTree = "<group>"; };
-		A605BBA0213FA63C00BD4877 /* AddCityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityTableViewController.swift; sourceTree = "<group>"; };
 		A60D0A6221325C3D001ED3CF /* soaked.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = soaked.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A60D0A6521325C3D001ED3CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A60D0A6A21325C3D001ED3CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -184,7 +182,6 @@
 				A605BB9E213F91AB00BD4877 /* MainWeatherTableViewCell.swift */,
 				A66B3C2F213B58EF005335F0 /* CurrentWeatherTableViewCell.swift */,
 				A60D0AC121328789001ED3CF /* WeatherTableViewController.swift */,
-				A605BBA0213FA63C00BD4877 /* AddCityTableViewController.swift */,
 				A60D0A6921325C3D001ED3CF /* Main.storyboard */,
 				A60D0A6C21325C3E001ED3CF /* Assets.xcassets */,
 				A60D0A6E21325C3E001ED3CF /* LaunchScreen.storyboard */,
@@ -428,7 +425,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A66B3C30213B58EF005335F0 /* CurrentWeatherTableViewCell.swift in Sources */,
-				A605BBA1213FA63C00BD4877 /* AddCityTableViewController.swift in Sources */,
 				A60D0AC4213287A4001ED3CF /* WeatherTableViewCell.swift in Sources */,
 				A60D0AC221328789001ED3CF /* WeatherTableViewController.swift in Sources */,
 				A605BB9F213F91AB00BD4877 /* MainWeatherTableViewCell.swift in Sources */,

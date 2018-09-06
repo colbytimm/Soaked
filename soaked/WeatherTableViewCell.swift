@@ -25,19 +25,40 @@ class WeatherTableViewCell: UITableViewCell {
         }
     }
     
-    var tempDict: [String:String]?
+    private var currentWeatherItemsDict: [String:String]?
+    //private var new = UserDefaults.standard.dictionary(forKey: "futureWeather")
     
     var item: WeatherItem! {
         didSet {
             if item?.title != nil {
                 let title = item?.title
+                let condition = item?.condition
+                let highTemp = item?.highTemp
+                let lowTemp = item?.lowTemp
                 titleLabel.text = trimString(title: title!)
+                conditionLbl.text = condition
+                highTempLbl.text = highTemp
+                lowTempLbl.text = lowTemp
             }
-            if item?.summary != nil {
-                summaryLabel.text = item?.summary
-            }
+//            if item?.summary != nil {
+//                summaryLabel.text = item?.summary
+//            }
         }
     }
+    
+//    var futureItem: FutureWeatherItem! {
+//        didSet {
+//            if futureItem?.condition != nil {
+//                conditionLbl.text = futureItem?.condition
+//            }
+//            if futureItem?.highTemp != nil {
+//                highTempLbl.text = futureItem?.highTemp
+//            }
+//            if futureItem?.lowTemp != nil {
+//                lowTempLbl.text = futureItem?.lowTemp
+//            }
+//        }
+//    }
     
     func trimString(title: String) -> String {
         var str = title
@@ -45,15 +66,6 @@ class WeatherTableViewCell: UITableViewCell {
             str.removeSubrange(dotRange.lowerBound..<str.endIndex)
         }
         return str
-    }
-    
-    func getTemp(title: String) {
-        var str = title
-        
-        if let dotRange = str.range(of: ".") {
-            str.removeSubrange(dotRange.lowerBound..<str.endIndex)
-            conditionLbl.text = str
-        }
     }
 
 }

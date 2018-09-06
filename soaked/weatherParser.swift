@@ -14,6 +14,10 @@ struct WeatherItem {
     var title: String
     var date: String
     var summary: String
+    var condition: String
+    var highTemp: String
+    var lowTemp: String
+    
 }
 
 // Download XML from Environment Canada
@@ -44,6 +48,22 @@ class WeatherParser: NSObject, XMLParserDelegate {
             }
         }
     }
+    private var currentCondition: String = "" {
+        didSet {
+            currentCondition = currentCondition.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        }
+    }
+    private var currentHighTemp: String = "" {
+        didSet {
+            currentHighTemp = currentHighTemp.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        }
+    }
+    private var currentLowTemp: String = "" {
+        didSet {
+            currentLowTemp = currentLowTemp.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        }
+    }
+    
     private var parseCompletionHandler: (([WeatherItem]) -> Void)?
     
     func parseWeather(url: String, completionHandler: (([WeatherItem]) -> Void)?) {
@@ -72,21 +92,24 @@ class WeatherParser: NSObject, XMLParserDelegate {
             currentTitle = ""
             currentDate = ""
             currentSummary = ""
+            currentCondition = ""
+            currentHighTemp = ""
+            currentLowTemp = ""
         }
     }
     
     func parser(_ parser: XMLParser, foundCharacters string: String) {
         switch currentElement {
-        case "title": currentTitle += string
+        case "title": currentTitle += string; getWeatherConditions(currentTitle: currentTitle)
         case "published": currentDate += string
-        case "summary": currentSummary += string
+        case "summary": currentSummary += string;
         default: break
         }
     }
     
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         if elementName == "entry" {
-            let weatherItem = WeatherItem(title: currentTitle, date: currentDate, summary: currentSummary)
+            let weatherItem = WeatherItem(title: currentTitle, date: currentDate, summary: currentSummary, condition: currentCondition, highTemp: currentHighTemp, lowTemp: currentLowTemp)
             self.weatherItems.append(weatherItem)
         }
     }
@@ -97,6 +120,12 @@ class WeatherParser: NSObject, XMLParserDelegate {
     
     func parser(_ parser: XMLParser, parseErrorOccurred parseError: Error) {
         print(parseError.localizedDescription)
+    }
+    
+    func getWeatherConditions(currentTitle: String) {
+        currentCondition = currentTitle.slice(from: ": ", to: ".") ?? "-"
+        currentLowTemp = currentTitle.slice(from: "Low ", to: ".") ?? "-"
+        currentHighTemp = currentTitle.slice(from: "High ", to: ".") ?? "-"
     }
         
 }

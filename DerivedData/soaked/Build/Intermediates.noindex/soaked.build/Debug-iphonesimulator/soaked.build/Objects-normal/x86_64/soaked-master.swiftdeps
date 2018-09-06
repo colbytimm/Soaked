@@ -1,10 +1,10 @@
 version: "Apple Swift version 4.2 (swiftlang-1000.0.32.1 clang-1000.10.39)"
 options: "dd86fc10422958b07296180f30da151b"
-build_time: [1536043500, 525790000]
+build_time: [1536271711, 828623000]
 inputs:
-  "/Users/colbytimm/Documents/Colby's Folder/Learning/Programming/Swift/soaked/soaked/CurrentWeatherTableViewCell.swift": [1536039959, 0]
-  "/Users/colbytimm/Documents/Colby's Folder/Learning/Programming/Swift/soaked/soaked/WeatherTableViewCell.swift": [1536037167, 0]
-  "/Users/colbytimm/Documents/Colby's Folder/Learning/Programming/Swift/soaked/soaked/WeatherTableViewController.swift": [1536043500, 0]
-  "/Users/colbytimm/Documents/Colby's Folder/Learning/Programming/Swift/soaked/soaked/weatherParser.swift": [1535912153, 0]
-  "/Users/colbytimm/Documents/Colby's Folder/Learning/Programming/Swift/soaked/soaked/ViewController.swift": [1535255741, 0]
+  "/Users/colbytimm/Documents/Colby's Folder/Learning/Programming/Swift/soaked/soaked/CurrentWeatherTableViewCell.swift": [1536210835, 0]
+  "/Users/colbytimm/Documents/Colby's Folder/Learning/Programming/Swift/soaked/soaked/WeatherTableViewCell.swift": [1536271513, 0]
+  "/Users/colbytimm/Documents/Colby's Folder/Learning/Programming/Swift/soaked/soaked/WeatherTableViewController.swift": [1536271710, 0]
+  "/Users/colbytimm/Documents/Colby's Folder/Learning/Programming/Swift/soaked/soaked/MainWeatherTableViewCell.swift": [1536265560, 0]
+  "/Users/colbytimm/Documents/Colby's Folder/Learning/Programming/Swift/soaked/soaked/weatherParser.swift": [1536271568, 0]
   "/Users/colbytimm/Documents/Colby's Folder/Learning/Programming/Swift/soaked/soaked/AppDelegate.swift": [1535255741, 0]

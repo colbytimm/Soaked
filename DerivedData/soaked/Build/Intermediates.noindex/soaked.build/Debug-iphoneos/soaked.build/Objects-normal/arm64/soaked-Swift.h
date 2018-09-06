@@ -204,15 +204,26 @@ SWIFT_CLASS("_TtC6soaked11AppDelegate")
 
 SWIFT_CLASS("_TtC6soaked27CurrentWeatherTableViewCell")
 @interface CurrentWeatherTableViewCell : UITableViewCell
-@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified weatherTypeLbl;
-@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified cityLbl;
-@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified temperatureLbl;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified humidityLbl;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified windLbl;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified dewPointLbl;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified pressureLbl;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified airQualityLbl;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified humidexLbl;
+- (void)awakeFromNib;
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated;
+- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=3.0);
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UIStackView;
+
+SWIFT_CLASS("_TtC6soaked24MainWeatherTableViewCell")
+@interface MainWeatherTableViewCell : UITableViewCell
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified weatherTypeLbl;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified cityLbl;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified temperatureLbl;
+@property (nonatomic, weak) IBOutlet UIStackView * _Null_unspecified stackView;
 - (void)awakeFromNib;
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated;
 - (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=3.0);
@@ -249,6 +260,7 @@ SWIFT_CLASS("_TtC6soaked20WeatherTableViewCell")
 SWIFT_CLASS("_TtC6soaked26WeatherTableViewController")
 @interface WeatherTableViewController : UITableViewController
 - (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)animated;
 - (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView SWIFT_WARN_UNUSED_RESULT;
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (CGFloat)tableView:(UITableView * _Nonnull)tableView heightForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;

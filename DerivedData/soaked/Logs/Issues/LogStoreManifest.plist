@@ -6,7 +6,7 @@
 	<integer>9</integer>
 	<key>logs</key>
 	<dict>
-		<key>01F8719E-0E97-4942-9783-557F6770D5AC</key>
+		<key>BEAEB0A4-B85A-46A0-A0B3-B01C0609CCBC</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -15,21 +15,44 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.target.product-type.target</string>
 			<key>fileName</key>
-			<string>01F8719E-0E97-4942-9783-557F6770D5AC.xcactivitylog</string>
+			<string>BEAEB0A4-B85A-46A0-A0B3-B01C0609CCBC.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>S</string>
+			<key>signature</key>
+			<string>soaked_WatchKit_App-dpjrteaaomfoahbhodbdbbazills</string>
+			<key>timeStartedRecording</key>
+			<real>557903337.19683504</real>
+			<key>timeStoppedRecording</key>
+			<real>557903338.32360196</real>
+			<key>title</key>
+			<string>Build target soaked WatchKit App</string>
+			<key>uniqueIdentifier</key>
+			<string>BEAEB0A4-B85A-46A0-A0B3-B01C0609CCBC</string>
+		</dict>
+		<key>E165ED61-3F53-4B07-98F1-2769A4F47A68</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.target.product-type.target</string>
+			<key>fileName</key>
+			<string>E165ED61-3F53-4B07-98F1-2769A4F47A68.xcactivitylog</string>
 			<key>highLevelStatus</key>
 			<string>S</string>
 			<key>signature</key>
 			<string>soaked_WatchKit_Extension-dpjrteaaomfoahbhodbdbbazills</string>
 			<key>timeStartedRecording</key>
-			<real>557819453.38478398</real>
+			<real>557903019.87226105</real>
 			<key>timeStoppedRecording</key>
-			<real>557819453.39225399</real>
+			<real>557903019.87943006</real>
 			<key>title</key>
 			<string>Build target soaked WatchKit Extension</string>
 			<key>uniqueIdentifier</key>
-			<string>01F8719E-0E97-4942-9783-557F6770D5AC</string>
+			<string>E165ED61-3F53-4B07-98F1-2769A4F47A68</string>
 		</dict>
-		<key>581AF9FC-0346-4F4C-A1FF-D1F388788B63</key>
+		<key>FE5FD97D-4C8B-4FAD-8193-C923DC1B2647</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -38,42 +61,19 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.target.product-type.application</string>
 			<key>fileName</key>
-			<string>581AF9FC-0346-4F4C-A1FF-D1F388788B63.xcactivitylog</string>
+			<string>FE5FD97D-4C8B-4FAD-8193-C923DC1B2647.xcactivitylog</string>
 			<key>highLevelStatus</key>
 			<string>S</string>
 			<key>signature</key>
 			<string>soaked-dpjrteaaomfoahbhodbdbbazills</string>
 			<key>timeStartedRecording</key>
-			<real>557870175.75835001</real>
+			<real>557964511.82339704</real>
 			<key>timeStoppedRecording</key>
-			<real>557870176.59898698</real>
+			<real>557964513.18929398</real>
 			<key>title</key>
 			<string>Build target soaked</string>
 			<key>uniqueIdentifier</key>
-			<string>581AF9FC-0346-4F4C-A1FF-D1F388788B63</string>
-		</dict>
-		<key>E5AA2783-580C-4A9B-9D34-62093643DCCE</key>
-		<dict>
-			<key>className</key>
-			<string>IDEActivityLogSection</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.target.product-type.target</string>
-			<key>fileName</key>
-			<string>E5AA2783-580C-4A9B-9D34-62093643DCCE.xcactivitylog</string>
-			<key>highLevelStatus</key>
-			<string>S</string>
-			<key>signature</key>
-			<string>soaked_WatchKit_App-dpjrteaaomfoahbhodbdbbazills</string>
-			<key>timeStartedRecording</key>
-			<real>557818772.20578897</real>
-			<key>timeStoppedRecording</key>
-			<real>557818772.21715105</real>
-			<key>title</key>
-			<string>Build target soaked WatchKit App</string>
-			<key>uniqueIdentifier</key>
-			<string>E5AA2783-580C-4A9B-9D34-62093643DCCE</string>
+			<string>FE5FD97D-4C8B-4FAD-8193-C923DC1B2647</string>
 		</dict>
 	</dict>
 	<key>preserveOldLogs</key>
