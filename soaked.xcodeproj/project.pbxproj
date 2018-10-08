@@ -12,17 +12,6 @@
 		A60D0A6B21325C3D001ED3CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A60D0A6921325C3D001ED3CF /* Main.storyboard */; };
 		A60D0A6D21325C3E001ED3CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A60D0A6C21325C3E001ED3CF /* Assets.xcassets */; };
 		A60D0A7021325C3E001ED3CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A60D0A6E21325C3E001ED3CF /* LaunchScreen.storyboard */; };
-		A60D0A7B21325C3E001ED3CF /* soakedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60D0A7A21325C3E001ED3CF /* soakedTests.swift */; };
-		A60D0A8621325C3E001ED3CF /* soakedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60D0A8521325C3E001ED3CF /* soakedUITests.swift */; };
-		A60D0A8B21325C3E001ED3CF /* soaked WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = A60D0A8A21325C3E001ED3CF /* soaked WatchKit App.app */; };
-		A60D0A9121325C3E001ED3CF /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A60D0A8F21325C3E001ED3CF /* Interface.storyboard */; };
-		A60D0A9321325C3F001ED3CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A60D0A9221325C3F001ED3CF /* Assets.xcassets */; };
-		A60D0A9A21325C3F001ED3CF /* soaked WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A60D0A9921325C3F001ED3CF /* soaked WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		A60D0A9F21325C3F001ED3CF /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60D0A9E21325C3F001ED3CF /* InterfaceController.swift */; };
-		A60D0AA121325C3F001ED3CF /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60D0AA021325C3F001ED3CF /* ExtensionDelegate.swift */; };
-		A60D0AA321325C3F001ED3CF /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60D0AA221325C3F001ED3CF /* NotificationController.swift */; };
-		A60D0AA521325C3F001ED3CF /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60D0AA421325C3F001ED3CF /* ComplicationController.swift */; };
-		A60D0AA721325C3F001ED3CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A60D0AA621325C3F001ED3CF /* Assets.xcassets */; };
 		A60D0ABE213274CD001ED3CF /* weatherParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60D0ABD213274CD001ED3CF /* weatherParser.swift */; };
 		A60D0AC221328789001ED3CF /* WeatherTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60D0AC121328789001ED3CF /* WeatherTableViewController.swift */; };
 		A60D0AC4213287A4001ED3CF /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60D0AC3213287A4001ED3CF /* WeatherTableViewCell.swift */; };
@@ -44,13 +33,6 @@
 			remoteGlobalIDString = A60D0A6121325C3D001ED3CF;
 			remoteInfo = soaked;
 		};
-		A60D0A8C21325C3E001ED3CF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A60D0A5A21325C3D001ED3CF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A60D0A8921325C3E001ED3CF;
-			remoteInfo = "soaked WatchKit App";
-		};
 		A60D0A9B21325C3F001ED3CF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A60D0A5A21325C3D001ED3CF /* Project object */;
@@ -67,53 +49,27 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				A60D0A9A21325C3F001ED3CF /* soaked WatchKit Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A60D0AB321325C3F001ED3CF /* Embed Watch Content */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
-			dstSubfolderSpec = 16;
-			files = (
-				A60D0A8B21325C3E001ED3CF /* soaked WatchKit App.app in Embed Watch Content */,
-			);
-			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		A605BB9E213F91AB00BD4877 /* MainWeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWeatherTableViewCell.swift; sourceTree = "<group>"; };
-		A60D0A6221325C3D001ED3CF /* soaked.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = soaked.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A60D0A6521325C3D001ED3CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A60D0A6A21325C3D001ED3CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A60D0A6C21325C3E001ED3CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A60D0A6F21325C3E001ED3CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A60D0A7121325C3E001ED3CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A60D0A7621325C3E001ED3CF /* soakedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = soakedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A60D0A7A21325C3E001ED3CF /* soakedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = soakedTests.swift; sourceTree = "<group>"; };
-		A60D0A7C21325C3E001ED3CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A60D0A8121325C3E001ED3CF /* soakedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = soakedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A60D0A8521325C3E001ED3CF /* soakedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = soakedUITests.swift; sourceTree = "<group>"; };
-		A60D0A8721325C3E001ED3CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A60D0A8A21325C3E001ED3CF /* soaked WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "soaked WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A60D0A9021325C3E001ED3CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		A60D0A9221325C3F001ED3CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A60D0A9421325C3F001ED3CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A60D0A9921325C3F001ED3CF /* soaked WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "soaked WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A60D0A9E21325C3F001ED3CF /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
-		A60D0AA021325C3F001ED3CF /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
-		A60D0AA221325C3F001ED3CF /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
-		A60D0AA421325C3F001ED3CF /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
-		A60D0AA621325C3F001ED3CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A60D0AA821325C3F001ED3CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A60D0AA921325C3F001ED3CF /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		A60D0ABD213274CD001ED3CF /* weatherParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherParser.swift; sourceTree = "<group>"; };
 		A60D0AC121328789001ED3CF /* WeatherTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewController.swift; sourceTree = "<group>"; };
 		A60D0AC3213287A4001ED3CF /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
+		A6325A97216B15FF00328A18 /* soaked.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = soaked.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6325A98216B15FF00328A18 /* soakedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = soakedTests.xctest; path = "/Users/colbytimm/Documents/Colby's Folder/Learning/Programming/Swift/soaked/build/Debug-iphoneos/soakedTests.xctest"; sourceTree = "<absolute>"; };
+		A6325A99216B15FF00328A18 /* soakedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = soakedUITests.xctest; path = "/Users/colbytimm/Documents/Colby's Folder/Learning/Programming/Swift/soaked/build/Debug-iphoneos/soakedUITests.xctest"; sourceTree = "<absolute>"; };
+		A6325A9A216B15FF00328A18 /* soaked WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "soaked WatchKit App.app"; path = "/Users/colbytimm/Documents/Colby's Folder/Learning/Programming/Swift/soaked/build/Debug-watchos/soaked WatchKit App.app"; sourceTree = "<absolute>"; };
+		A6325A9B216B15FF00328A18 /* soaked WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; name = "soaked WatchKit Extension.appex"; path = "/Users/colbytimm/Documents/Colby's Folder/Learning/Programming/Swift/soaked/build/Debug-watchos/soaked WatchKit Extension.appex"; sourceTree = "<absolute>"; };
 		A66B3C2F213B58EF005335F0 /* CurrentWeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,24 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				A60D0A6421325C3D001ED3CF /* soaked */,
-				A60D0A7921325C3E001ED3CF /* soakedTests */,
-				A60D0A8421325C3E001ED3CF /* soakedUITests */,
-				A60D0A8E21325C3E001ED3CF /* soaked WatchKit App */,
-				A60D0A9D21325C3F001ED3CF /* soaked WatchKit Extension */,
-				A60D0A6321325C3D001ED3CF /* Products */,
+				A6325A97216B15FF00328A18 /* soaked.app */,
 			);
-			sourceTree = "<group>";
-		};
-		A60D0A6321325C3D001ED3CF /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A60D0A6221325C3D001ED3CF /* soaked.app */,
-				A60D0A7621325C3E001ED3CF /* soakedTests.xctest */,
-				A60D0A8121325C3E001ED3CF /* soakedUITests.xctest */,
-				A60D0A8A21325C3E001ED3CF /* soaked WatchKit App.app */,
-				A60D0A9921325C3F001ED3CF /* soaked WatchKit Extension.appex */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		A60D0A6421325C3D001ED3CF /* soaked */ = {
@@ -190,48 +130,6 @@
 			path = soaked;
 			sourceTree = "<group>";
 		};
-		A60D0A7921325C3E001ED3CF /* soakedTests */ = {
-			isa = PBXGroup;
-			children = (
-				A60D0A7A21325C3E001ED3CF /* soakedTests.swift */,
-				A60D0A7C21325C3E001ED3CF /* Info.plist */,
-			);
-			path = soakedTests;
-			sourceTree = "<group>";
-		};
-		A60D0A8421325C3E001ED3CF /* soakedUITests */ = {
-			isa = PBXGroup;
-			children = (
-				A60D0A8521325C3E001ED3CF /* soakedUITests.swift */,
-				A60D0A8721325C3E001ED3CF /* Info.plist */,
-			);
-			path = soakedUITests;
-			sourceTree = "<group>";
-		};
-		A60D0A8E21325C3E001ED3CF /* soaked WatchKit App */ = {
-			isa = PBXGroup;
-			children = (
-				A60D0A8F21325C3E001ED3CF /* Interface.storyboard */,
-				A60D0A9221325C3F001ED3CF /* Assets.xcassets */,
-				A60D0A9421325C3F001ED3CF /* Info.plist */,
-			);
-			path = "soaked WatchKit App";
-			sourceTree = "<group>";
-		};
-		A60D0A9D21325C3F001ED3CF /* soaked WatchKit Extension */ = {
-			isa = PBXGroup;
-			children = (
-				A60D0A9E21325C3F001ED3CF /* InterfaceController.swift */,
-				A60D0AA021325C3F001ED3CF /* ExtensionDelegate.swift */,
-				A60D0AA221325C3F001ED3CF /* NotificationController.swift */,
-				A60D0AA421325C3F001ED3CF /* ComplicationController.swift */,
-				A60D0AA621325C3F001ED3CF /* Assets.xcassets */,
-				A60D0AA821325C3F001ED3CF /* Info.plist */,
-				A60D0AA921325C3F001ED3CF /* PushNotificationPayload.apns */,
-			);
-			path = "soaked WatchKit Extension";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -242,16 +140,14 @@
 				A60D0A5E21325C3D001ED3CF /* Sources */,
 				A60D0A5F21325C3D001ED3CF /* Frameworks */,
 				A60D0A6021325C3D001ED3CF /* Resources */,
-				A60D0AB321325C3F001ED3CF /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A60D0A8D21325C3E001ED3CF /* PBXTargetDependency */,
 			);
 			name = soaked;
 			productName = soaked;
-			productReference = A60D0A6221325C3D001ED3CF /* soaked.app */;
+			productReference = A6325A97216B15FF00328A18 /* soaked.app */;
 			productType = "com.apple.product-type.application";
 		};
 		A60D0A7521325C3E001ED3CF /* soakedTests */ = {
@@ -269,7 +165,7 @@
 			);
 			name = soakedTests;
 			productName = soakedTests;
-			productReference = A60D0A7621325C3E001ED3CF /* soakedTests.xctest */;
+			productReference = A6325A98216B15FF00328A18 /* soakedTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		A60D0A8021325C3E001ED3CF /* soakedUITests */ = {
@@ -287,7 +183,7 @@
 			);
 			name = soakedUITests;
 			productName = soakedUITests;
-			productReference = A60D0A8121325C3E001ED3CF /* soakedUITests.xctest */;
+			productReference = A6325A99216B15FF00328A18 /* soakedUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 		A60D0A8921325C3E001ED3CF /* soaked WatchKit App */ = {
@@ -304,7 +200,7 @@
 			);
 			name = "soaked WatchKit App";
 			productName = "soaked WatchKit App";
-			productReference = A60D0A8A21325C3E001ED3CF /* soaked WatchKit App.app */;
+			productReference = A6325A9A216B15FF00328A18 /* soaked WatchKit App.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
 		A60D0A9821325C3F001ED3CF /* soaked WatchKit Extension */ = {
@@ -321,7 +217,7 @@
 			);
 			name = "soaked WatchKit Extension";
 			productName = "soaked WatchKit Extension";
-			productReference = A60D0A9921325C3F001ED3CF /* soaked WatchKit Extension.appex */;
+			productReference = A6325A9B216B15FF00328A18 /* soaked WatchKit Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
@@ -362,7 +258,7 @@
 				Base,
 			);
 			mainGroup = A60D0A5921325C3D001ED3CF;
-			productRefGroup = A60D0A6321325C3D001ED3CF /* Products */;
+			productRefGroup = A60D0A5921325C3D001ED3CF;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -404,8 +300,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A60D0A9321325C3F001ED3CF /* Assets.xcassets in Resources */,
-				A60D0A9121325C3E001ED3CF /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,7 +307,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A60D0AA721325C3F001ED3CF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,7 +330,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A60D0A7B21325C3E001ED3CF /* soakedTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,7 +337,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A60D0A8621325C3E001ED3CF /* soakedUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,10 +344,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A60D0AA321325C3F001ED3CF /* NotificationController.swift in Sources */,
-				A60D0AA521325C3F001ED3CF /* ComplicationController.swift in Sources */,
-				A60D0AA121325C3F001ED3CF /* ExtensionDelegate.swift in Sources */,
-				A60D0A9F21325C3F001ED3CF /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,11 +359,6 @@
 			isa = PBXTargetDependency;
 			target = A60D0A6121325C3D001ED3CF /* soaked */;
 			targetProxy = A60D0A8221325C3E001ED3CF /* PBXContainerItemProxy */;
-		};
-		A60D0A8D21325C3E001ED3CF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A60D0A8921325C3E001ED3CF /* soaked WatchKit App */;
-			targetProxy = A60D0A8C21325C3E001ED3CF /* PBXContainerItemProxy */;
 		};
 		A60D0A9C21325C3F001ED3CF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -500,14 +382,6 @@
 				A60D0A6F21325C3E001ED3CF /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		A60D0A8F21325C3E001ED3CF /* Interface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A60D0A9021325C3E001ED3CF /* Base */,
-			);
-			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -676,7 +550,6 @@
 		A60D0AB121325C3F001ED3CF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4FG6Y8EPVZ;
@@ -695,7 +568,6 @@
 		A60D0AB221325C3F001ED3CF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4FG6Y8EPVZ;

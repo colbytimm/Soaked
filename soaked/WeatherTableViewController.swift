@@ -31,13 +31,6 @@ class WeatherTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        if let tableView = self.view as? UITableView {
-            tableView.backgroundView = UIImageView(image: UIImage(named: "mtns_background"))
-            tableView.autoresizingMask = [.flexibleTopMargin, .flexibleHeight, .flexibleRightMargin, .flexibleLeftMargin, .flexibleTopMargin, .flexibleWidth]
-            tableView.contentMode = .scaleAspectFill
-            tableView.clipsToBounds = true
-        }
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
