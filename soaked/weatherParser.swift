@@ -23,7 +23,7 @@ struct WeatherItem {
 // Download XML from Environment Canada
 
 class WeatherParser: NSObject, XMLParserDelegate {
-    private var weatherItems: [WeatherItem] = []
+    var weatherItems: [WeatherItem] = []
     private var currentElement = ""
     
     private var currentTitle: String = "" {

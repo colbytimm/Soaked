@@ -13,6 +13,8 @@ class MainWeatherTableViewCell: UITableViewCell {
     @IBOutlet weak var weatherTypeLbl:UILabel!
     @IBOutlet weak var cityLbl:UILabel!
     @IBOutlet weak var temperatureLbl:UILabel!
+    @IBOutlet var messageLbl: UILabel!
+    @IBOutlet var activityIndicatorView: UIActivityIndicatorView!
     
     @IBOutlet weak var stackView: UIStackView!
     

@@ -22,11 +22,18 @@ class WeatherTableViewController: UITableViewController {
     private var lowList: [String] = []
     private let termList = ["Condition","Temperature","Tendency","Humidity","Humidex","Dewpoint","Wind","Index"]
     private let futureTermList = ["Low","High","Condition"]
+    private let refreshCont = UIRefreshControl()
+    
+    var weatherParse: WeatherParser?
+    var mainWeather: MainWeatherTableViewCell?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupView()
+        
+        fetchWeatherData()
 
-        fetchData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,7 +44,53 @@ class WeatherTableViewController: UITableViewController {
         self.navigationController?.view.backgroundColor = .clear
     }
     
-    func fetchData() {
+    private func setupView() {
+        setupTableView()
+        setupMessageLabel()
+        setupActivityIndicatorView()
+    }
+    
+    private func fetchWeatherData() {
+        fetchData()
+        self.refreshCont.endRefreshing()
+        mainWeather?.activityIndicatorView.stopAnimating()
+    }
+    
+    private func setupTableView() {
+        //tableView.isHidden = true
+        
+        // Add Refresh Control to Table View
+        tableView.refreshControl = refreshCont
+        
+        // Configure Refresh Control
+        refreshCont.addTarget(self, action: #selector(refreshWeatherData(_:)), for: .valueChanged)
+    }
+    
+    private func setupMessageLabel() {
+        mainWeather?.messageLbl.isHidden = true
+        mainWeather?.messageLbl.text = "Nothing show you."
+    }
+    
+    @objc private func refreshWeatherData(_ sender: Any) {
+        // Fetch Weather Data
+        fetchWeatherData()
+    }
+    
+    private func setupActivityIndicatorView() {
+        mainWeather?.activityIndicatorView.startAnimating()
+    }
+    
+    private func updateView() {
+        let hasWeather = weatherParse?.weatherItems.count ?? 0 > 0
+        tableView.isHidden = !hasWeather
+        mainWeather?.messageLbl.isHidden = hasWeather
+        
+        if hasWeather {
+            tableView.reloadData()
+        }
+    }
+    
+    private func fetchData() {
         let feedParser = WeatherParser()
         feedParser.parseWeather(url: "https://weather.gc.ca/rss/city/bc-74_e.xml") { (weatherItems) in
             self.weatherItems = weatherItems
