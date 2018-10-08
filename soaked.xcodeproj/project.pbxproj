@@ -15,6 +15,8 @@
 		A60D0ABE213274CD001ED3CF /* weatherParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60D0ABD213274CD001ED3CF /* weatherParser.swift */; };
 		A60D0AC221328789001ED3CF /* WeatherTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60D0AC121328789001ED3CF /* WeatherTableViewController.swift */; };
 		A60D0AC4213287A4001ED3CF /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60D0AC3213287A4001ED3CF /* WeatherTableViewCell.swift */; };
+		A6325A9D216BFDCD00328A18 /* LocationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6325A9C216BFDCD00328A18 /* LocationTableViewController.swift */; };
+		A6325AA2216BFED500328A18 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6325AA1216BFED500328A18 /* Default-568h@2x.png */; };
 		A66B3C30213B58EF005335F0 /* CurrentWeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66B3C2F213B58EF005335F0 /* CurrentWeatherTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +72,8 @@
 		A6325A99216B15FF00328A18 /* soakedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = soakedUITests.xctest; path = "/Users/colbytimm/Documents/Colby's Folder/Learning/Programming/Swift/soaked/build/Debug-iphoneos/soakedUITests.xctest"; sourceTree = "<absolute>"; };
 		A6325A9A216B15FF00328A18 /* soaked WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "soaked WatchKit App.app"; path = "/Users/colbytimm/Documents/Colby's Folder/Learning/Programming/Swift/soaked/build/Debug-watchos/soaked WatchKit App.app"; sourceTree = "<absolute>"; };
 		A6325A9B216B15FF00328A18 /* soaked WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; name = "soaked WatchKit Extension.appex"; path = "/Users/colbytimm/Documents/Colby's Folder/Learning/Programming/Swift/soaked/build/Debug-watchos/soaked WatchKit Extension.appex"; sourceTree = "<absolute>"; };
+		A6325A9C216BFDCD00328A18 /* LocationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewController.swift; sourceTree = "<group>"; };
+		A6325AA1216BFED500328A18 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		A66B3C2F213B58EF005335F0 /* CurrentWeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,6 +112,7 @@
 		A60D0A5921325C3D001ED3CF = {
 			isa = PBXGroup;
 			children = (
+				A6325AA1216BFED500328A18 /* Default-568h@2x.png */,
 				A60D0A6421325C3D001ED3CF /* soaked */,
 				A6325A97216B15FF00328A18 /* soaked.app */,
 			);
@@ -116,18 +121,76 @@
 		A60D0A6421325C3D001ED3CF /* soaked */ = {
 			isa = PBXGroup;
 			children = (
+				A6325A9C216BFDCD00328A18 /* LocationTableViewController.swift */,
 				A60D0A6521325C3D001ED3CF /* AppDelegate.swift */,
-				A60D0ABD213274CD001ED3CF /* weatherParser.swift */,
 				A60D0AC3213287A4001ED3CF /* WeatherTableViewCell.swift */,
 				A605BB9E213F91AB00BD4877 /* MainWeatherTableViewCell.swift */,
 				A66B3C2F213B58EF005335F0 /* CurrentWeatherTableViewCell.swift */,
+				A60D0ABD213274CD001ED3CF /* weatherParser.swift */,
 				A60D0AC121328789001ED3CF /* WeatherTableViewController.swift */,
-				A60D0A6921325C3D001ED3CF /* Main.storyboard */,
 				A60D0A6C21325C3E001ED3CF /* Assets.xcassets */,
+				A60D0A6921325C3D001ED3CF /* Main.storyboard */,
 				A60D0A6E21325C3E001ED3CF /* LaunchScreen.storyboard */,
 				A60D0A7121325C3E001ED3CF /* Info.plist */,
+				A6325AA4216C005600328A18 /* Application Delegate */,
+				A6325AA3216C003500328A18 /* Table View Cells */,
+				A6325AA5216C007100328A18 /* Parser */,
+				A6325AA6216C008300328A18 /* View Controllers */,
+				A6325A9F216BFE6C00328A18 /* Resources */,
+				A6325A9E216BFE5600328A18 /* Storyboards */,
+				A6325AA0216BFEB100328A18 /* Supporting Files */,
 			);
 			path = soaked;
+			sourceTree = "<group>";
+		};
+		A6325A9E216BFE5600328A18 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		A6325A9F216BFE6C00328A18 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		A6325AA0216BFEB100328A18 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A6325AA3216C003500328A18 /* Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Table View Cells";
+			sourceTree = "<group>";
+		};
+		A6325AA4216C005600328A18 /* Application Delegate */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Application Delegate";
+			sourceTree = "<group>";
+		};
+		A6325AA5216C007100328A18 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
+		A6325AA6216C008300328A18 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A60D0A7021325C3E001ED3CF /* LaunchScreen.storyboard in Resources */,
+				A6325AA2216BFED500328A18 /* Default-568h@2x.png in Resources */,
 				A60D0A6D21325C3E001ED3CF /* Assets.xcassets in Resources */,
 				A60D0A6B21325C3D001ED3CF /* Main.storyboard in Resources */,
 			);
@@ -323,6 +387,7 @@
 				A605BB9F213F91AB00BD4877 /* MainWeatherTableViewCell.swift in Sources */,
 				A60D0ABE213274CD001ED3CF /* weatherParser.swift in Sources */,
 				A60D0A6621325C3D001ED3CF /* AppDelegate.swift in Sources */,
+				A6325A9D216BFDCD00328A18 /* LocationTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
