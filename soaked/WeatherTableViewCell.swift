@@ -15,6 +15,7 @@ enum CellState {
 
 class WeatherTableViewCell: UITableViewCell {
 
+    @IBOutlet var conditionImg: UIImageView?
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var conditionLbl: UILabel!
     @IBOutlet weak var highTempLbl: UILabel!
@@ -39,10 +40,49 @@ class WeatherTableViewCell: UITableViewCell {
                 conditionLbl.text = condition
                 highTempLbl.text = highTemp
                 lowTempLbl.text = lowTemp
+                
+                // Set condition images for each cell
+                if (condition?.lowercased().range(of: "cloud") != nil || condition?.lowercased().range(of: "cloudy") != nil) && title?.lowercased().range(of: "night") != nil {
+                    let image: UIImage = UIImage(named: "cloudy_night")!
+                    conditionImg?.image = image
+                }
+                if title?.lowercased().range(of: "night") == nil && condition?.lowercased().range(of: "sun") == nil && (condition?.lowercased().range(of: "cloud") != nil || condition?.lowercased().range(of: "cloudy") != nil) {
+                    let image = UIImage(named: "cloudy")
+                    conditionImg?.image = image
+                }
+                if condition?.lowercased().range(of: "sun") != nil && (condition?.lowercased().range(of: "cloud") != nil || condition?.lowercased().range(of: "cloudy") != nil) {
+                    let image = UIImage(named: "partly_cloudy")
+                    conditionImg?.image = image
+                }
+                if title?.lowercased().range(of: "night") != nil && condition?.lowercased().range(of: "clear") != nil {
+                    let image = UIImage(named: "clear_night")
+                    conditionImg?.image = image
+                }
+                if (condition?.lowercased().range(of: "rain") != nil || condition?.lowercased().range(of: "rainy") != nil) && title?.lowercased().range(of: "night") != nil {
+                    let image: UIImage = UIImage(named: "rain_night")!
+                    conditionImg?.image = image
+                }
+                if condition?.lowercased().range(of: "rain") != nil || condition?.lowercased().range(of: "rainy") != nil {
+                    let image = UIImage(named: "rain")
+                    conditionImg?.image = image
+                }
+                if (condition?.lowercased().range(of: "lightning") != nil || condition?.lowercased().range(of: "rain") != nil) {
+                    let image: UIImage = UIImage(named: "lightning_rain")!
+                    conditionImg?.image = image
+                }
+                if condition?.lowercased().range(of: "lightning") != nil {
+                    let image = UIImage(named: "lightning")
+                    conditionImg?.image = image
+                }
+                if (condition?.lowercased().range(of: "snow") != nil || condition?.lowercased().range(of: "snowing") != nil) && title?.lowercased().range(of: "night") != nil {
+                    let image: UIImage = UIImage(named: "snow_night")!
+                    conditionImg?.image = image
+                }
+                if condition?.lowercased().range(of: "snow") != nil || condition?.lowercased().range(of: "snowing") != nil {
+                    let image = UIImage(named: "snow")
+                    conditionImg?.image = image
+                }
             }
-//            if item?.summary != nil {
-//                summaryLabel.text = item?.summary
-//            }
         }
     }
     

@@ -121,13 +121,13 @@
 		A60D0A6421325C3D001ED3CF /* soaked */ = {
 			isa = PBXGroup;
 			children = (
-				A6325A9C216BFDCD00328A18 /* LocationTableViewController.swift */,
 				A60D0A6521325C3D001ED3CF /* AppDelegate.swift */,
 				A60D0AC3213287A4001ED3CF /* WeatherTableViewCell.swift */,
 				A605BB9E213F91AB00BD4877 /* MainWeatherTableViewCell.swift */,
 				A66B3C2F213B58EF005335F0 /* CurrentWeatherTableViewCell.swift */,
 				A60D0ABD213274CD001ED3CF /* weatherParser.swift */,
 				A60D0AC121328789001ED3CF /* WeatherTableViewController.swift */,
+				A6325A9C216BFDCD00328A18 /* LocationTableViewController.swift */,
 				A60D0A6C21325C3E001ED3CF /* Assets.xcassets */,
 				A60D0A6921325C3D001ED3CF /* Main.storyboard */,
 				A60D0A6E21325C3E001ED3CF /* LaunchScreen.storyboard */,

@@ -10,6 +10,7 @@ import UIKit
 
 class MainWeatherTableViewCell: UITableViewCell {
 
+    @IBOutlet var backgroundImg: UIImageView!
     @IBOutlet weak var weatherTypeLbl:UILabel!
     @IBOutlet weak var cityLbl:UILabel!
     @IBOutlet weak var temperatureLbl:UILabel!
@@ -34,6 +35,7 @@ class MainWeatherTableViewCell: UITableViewCell {
                 default : break
                 }
             }
+            
         }
     }
     
