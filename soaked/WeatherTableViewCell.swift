@@ -38,7 +38,14 @@ class WeatherTableViewCell: UITableViewCell {
                 let lowTemp = item?.lowTemp
                 titleLabel.text = trimString(title: title!)
                 conditionLbl.text = condition
-                highTempLbl.text = highTemp
+                if let dotRange = highTemp?.range(of: "except") {
+                    var str = highTemp
+                    str!.removeSubrange(dotRange.lowerBound..<str!.endIndex)
+                    highTempLbl.text = str
+                }
+                else {
+                    highTempLbl.text = highTemp
+                }
                 lowTempLbl.text = lowTemp
                 
                 // Set condition images for each cell

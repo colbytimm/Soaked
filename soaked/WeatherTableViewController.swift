@@ -16,15 +16,22 @@ struct FutureWeatherItem {
 
 class WeatherTableViewController: UITableViewController {
     private var weatherItems: [WeatherItem]?
+    private var hourlyForecastItems: [HourlyForecastItem]?
+    
+    private var weatherURL = "https://weather.gc.ca/rss/city/mb-38_e.xml"
+    
     private var currentWeatherItemsDict: [String:String]?
     private var conditionList: [String] = []
     private var highList: [String] = []
     private var lowList: [String] = []
     private let termList = ["Condition","Temperature","Tendency","Humidity","Humidex","Dewpoint","Wind","Index"]
     private let futureTermList = ["Low","High","Condition"]
+    private let dayTermList = ["hourlyForecast","condition","temperature","lop","speed"]
+    private let sunTermList = ["sunrise","sunset"]
     private let refreshCont = UIRefreshControl()
     
     var weatherParse: WeatherParser?
+    var forecastParse: DayWeatherParser?
     var mainWeather: MainWeatherTableViewCell?
     
     override func viewDidLoad() {
@@ -33,7 +40,8 @@ class WeatherTableViewController: UITableViewController {
         setupView()
         
         fetchWeatherData()
-
+        
+        fetchDataForecast()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -90,9 +98,52 @@ class WeatherTableViewController: UITableViewController {
         }
     }
     
+    ////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////
+    
+    private func fetchDataForecast() {
+        let feedDayParser = DayWeatherParser()
+        feedDayParser.parseWeather(url: "http://dd.weather.gc.ca/citypage_weather/xml/BC/s0000141_e.xml") { (hourlyForecastItems) in
+            self.hourlyForecastItems = hourlyForecastItems
+            
+            let query = self.hourlyForecastItems![1].date
+            //self.hourlyForecastItems?.remove(at: 1)
+            
+            self.currentWeatherItemsDict = self.getDayValue(query: query, terms: self.termList)
+            UserDefaults.standard.set(self.currentWeatherItemsDict, forKey: "currentDayWeather")
+            
+            OperationQueue.main.addOperation {
+                self.tableView.reloadSections(IndexSet(integer: 0), with: .left)
+            }
+        }
+    }
+    
+    // Returns dictionary of current weather condition parameters
+    private func getDayValue(query: String, terms: [String]) -> [String:String] {
+        var resultsDict: [String: String] = [:]
+        for item in terms {
+            var pattern = item
+            pattern = item + ":(.*?)\n"
+            let regex = try! NSRegularExpression(pattern:pattern, options: [])
+            
+            regex.enumerateMatches(in: query, options: [], range: NSMakeRange(0, query.utf16.count)) { result, flags, stop in
+                if let r = result?.range(at: 1), let range = Range(r, in: query) {
+                    resultsDict[item] = String(query[range])
+                    
+                }
+            }
+        }
+        return resultsDict
+    }
+    
+    ////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////
+    
     private func fetchData() {
         let feedParser = WeatherParser()
-        feedParser.parseWeather(url: "https://weather.gc.ca/rss/city/bc-74_e.xml") { (weatherItems) in
+        feedParser.parseWeather(url: weatherURL) { (weatherItems) in
             self.weatherItems = weatherItems
 
             let query = self.weatherItems![1].summary
@@ -100,6 +151,9 @@ class WeatherTableViewController: UITableViewController {
             
             self.currentWeatherItemsDict = self.getValue(query: query, terms: self.termList)
             UserDefaults.standard.set(self.currentWeatherItemsDict, forKey: "currentWeather")
+            
+//            self.currentHourlyItemsDict = self.getValue(query: query, terms: self.termList)
+//            UserDefaults.standard.set(self.currentHourlyItemsDict, forKey: "currentWeather")
         
             OperationQueue.main.addOperation {
                 self.tableView.reloadSections(IndexSet(integer: 0), with: .left)
