@@ -18,7 +18,7 @@ class WeatherTableViewController: UITableViewController {
     private var weatherItems: [WeatherItem]?
     private var hourlyForecastItems: [HourlyForecastItem]?
     
-    private var weatherURL = "https://weather.gc.ca/rss/city/mb-38_e.xml"
+    private var weatherURL = "https://weather.gc.ca/rss/city/nt-6_e.xml"
     
     private var currentWeatherItemsDict: [String:String]?
     private var conditionList: [String] = []

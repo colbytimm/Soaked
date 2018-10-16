@@ -34,18 +34,37 @@ class WeatherTableViewCell: UITableViewCell {
             if item?.title != nil {
                 let title = item?.title
                 let condition = item?.condition
-                let highTemp = item?.highTemp
-                let lowTemp = item?.lowTemp
+                var highTemp = item?.highTemp
+                var lowTemp = item?.lowTemp
+                
                 titleLabel.text = trimString(title: title!)
                 conditionLbl.text = condition
+                
                 if let dotRange = highTemp?.range(of: "except") {
                     var str = highTemp
                     str!.removeSubrange(dotRange.lowerBound..<str!.endIndex)
                     highTempLbl.text = str
                 }
-                else {
-                    highTempLbl.text = highTemp
+                if highTemp?.range(of: "minus") != nil {
+                    highTemp = highTemp?.replacingOccurrences(of: "minus", with: "-")
                 }
+                if highTemp?.range(of: "zero") != nil {
+                    highTemp = highTemp?.replacingOccurrences(of: "zero", with: "0")
+                }
+                if highTemp?.range(of: "plus") != nil {
+                    highTemp = highTemp?.replacingOccurrences(of: "plus", with: "+")
+                }
+                if lowTemp?.range(of: "plus") != nil {
+                    lowTemp = lowTemp?.replacingOccurrences(of: "plus", with: "+")
+                }
+                if lowTemp?.range(of: "minus") != nil {
+                    lowTemp = lowTemp?.replacingOccurrences(of: "minus", with: "-")
+                }
+                if lowTemp?.range(of: "zero") != nil {
+                    lowTemp = lowTemp?.replacingOccurrences(of: "zero", with: "0")
+                }
+                
+                highTempLbl.text = highTemp
                 lowTempLbl.text = lowTemp
                 
                 // Set condition images for each cell
@@ -65,15 +84,15 @@ class WeatherTableViewCell: UITableViewCell {
                     let image = UIImage(named: "clear_night")
                     conditionImg?.image = image
                 }
-                if (condition?.lowercased().range(of: "rain") != nil || condition?.lowercased().range(of: "rainy") != nil) && title?.lowercased().range(of: "night") != nil {
-                    let image: UIImage = UIImage(named: "rain_night")!
-                    conditionImg?.image = image
-                }
-                if condition?.lowercased().range(of: "rain") != nil || condition?.lowercased().range(of: "rainy") != nil {
+                if condition?.lowercased().range(of: "showers") != nil || condition?.lowercased().range(of: "rain") != nil || condition?.lowercased().range(of: "rainy") != nil {
                     let image = UIImage(named: "rain")
                     conditionImg?.image = image
                 }
-                if (condition?.lowercased().range(of: "lightning") != nil || condition?.lowercased().range(of: "rain") != nil) {
+                if (condition?.lowercased().range(of: "showers") != nil || condition?.lowercased().range(of: "rain") != nil || condition?.lowercased().range(of: "rainy") != nil) && title?.lowercased().range(of: "night") != nil {
+                    let image: UIImage = UIImage(named: "rain_night")!
+                    conditionImg?.image = image
+                }
+                if (condition?.lowercased().range(of: "lightning") != nil && condition?.lowercased().range(of: "rain") != nil) {
                     let image: UIImage = UIImage(named: "lightning_rain")!
                     conditionImg?.image = image
                 }
