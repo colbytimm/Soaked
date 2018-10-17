@@ -47,21 +47,27 @@ class WeatherTableViewCell: UITableViewCell {
                 }
                 if highTemp?.range(of: "minus") != nil {
                     highTemp = highTemp?.replacingOccurrences(of: "minus", with: "-")
+                    highTemp = highTemp?.replacingOccurrences(of: " ", with: "")
                 }
                 if highTemp?.range(of: "zero") != nil {
                     highTemp = highTemp?.replacingOccurrences(of: "zero", with: "0")
+                    highTemp = highTemp?.replacingOccurrences(of: " ", with: "")
                 }
                 if highTemp?.range(of: "plus") != nil {
                     highTemp = highTemp?.replacingOccurrences(of: "plus", with: "+")
+                    highTemp = highTemp?.replacingOccurrences(of: " ", with: "")
                 }
                 if lowTemp?.range(of: "plus") != nil {
                     lowTemp = lowTemp?.replacingOccurrences(of: "plus", with: "+")
+                    lowTemp = lowTemp?.replacingOccurrences(of: " ", with: "")
                 }
                 if lowTemp?.range(of: "minus") != nil {
                     lowTemp = lowTemp?.replacingOccurrences(of: "minus", with: "-")
+                    lowTemp = lowTemp?.replacingOccurrences(of: " ", with: "")
                 }
                 if lowTemp?.range(of: "zero") != nil {
                     lowTemp = lowTemp?.replacingOccurrences(of: "zero", with: "0")
+                    lowTemp = lowTemp?.replacingOccurrences(of: " ", with: "")
                 }
                 
                 highTempLbl.text = highTemp
@@ -100,12 +106,20 @@ class WeatherTableViewCell: UITableViewCell {
                     let image = UIImage(named: "lightning")
                     conditionImg?.image = image
                 }
-                if (condition?.lowercased().range(of: "snow") != nil || condition?.lowercased().range(of: "snowing") != nil) && title?.lowercased().range(of: "night") != nil {
+                if (condition?.lowercased().range(of: "snow") != nil || condition?.lowercased().range(of: "snowing") != nil || condition?.lowercased().range(of: "flurries") != nil) && title?.lowercased().range(of: "night") != nil {
                     let image: UIImage = UIImage(named: "snow_night")!
                     conditionImg?.image = image
                 }
-                if condition?.lowercased().range(of: "snow") != nil || condition?.lowercased().range(of: "snowing") != nil {
+                if condition?.lowercased().range(of: "snow") != nil || condition?.lowercased().range(of: "snowing") != nil || condition?.lowercased().range(of: "flurries") != nil {
                     let image = UIImage(named: "snow")
+                    conditionImg?.image = image
+                }
+                if ((condition?.lowercased().range(of: "snow") != nil || condition?.lowercased().range(of: "snowing") != nil || condition?.lowercased().range(of: "flurries") != nil) && title?.lowercased().range(of: "night") != nil) && title?.lowercased().range(of: "rain") != nil {
+                    let image: UIImage = UIImage(named: "rain_and_snow_night")!
+                    conditionImg?.image = image
+                }
+                if (condition?.lowercased().range(of: "snow") != nil || condition?.lowercased().range(of: "snowing") != nil || condition?.lowercased().range(of: "flurries") != nil) && title?.lowercased().range(of: "rain") != nil {
+                    let image = UIImage(named: "rain_and_snow")
                     conditionImg?.image = image
                 }
             }
