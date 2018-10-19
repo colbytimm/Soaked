@@ -71,10 +71,10 @@
 		A6325A9C216BFDCD00328A18 /* LocationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewController.swift; sourceTree = "<group>"; };
 		A6325AA7216F260800328A18 /* dayWeatherParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dayWeatherParser.swift; sourceTree = "<group>"; };
 		A66B3C2F213B58EF005335F0 /* CurrentWeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherTableViewCell.swift; sourceTree = "<group>"; };
-		A67D0CAD2171476D009D3C61 /* soakedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = soakedTests.xctest; path = "/Users/colbytimm/Documents/Colby's Folder/Learning/Programming/Swift/soaked/build/Debug-iphoneos/soakedTests.xctest"; sourceTree = "<absolute>"; };
-		A67D0CAE2171476D009D3C61 /* soakedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = soakedUITests.xctest; path = "/Users/colbytimm/Documents/Colby's Folder/Learning/Programming/Swift/soaked/build/Debug-iphoneos/soakedUITests.xctest"; sourceTree = "<absolute>"; };
-		A67D0CAF2171476D009D3C61 /* soaked WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "soaked WatchKit App.app"; path = "/Users/colbytimm/Documents/Colby's Folder/Learning/Programming/Swift/soaked/build/Debug-watchos/soaked WatchKit App.app"; sourceTree = "<absolute>"; };
-		A67D0CB02171476D009D3C61 /* soaked WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; name = "soaked WatchKit Extension.appex"; path = "/Users/colbytimm/Documents/Colby's Folder/Learning/Programming/Swift/soaked/build/Debug-watchos/soaked WatchKit Extension.appex"; sourceTree = "<absolute>"; };
+		A697030221797E260027C1C2 /* soakedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = soakedTests.xctest; path = "/Users/colbytimm/Documents/Colby's Folder/Learning/Programming/Swift/soaked/build/Debug-iphoneos/soakedTests.xctest"; sourceTree = "<absolute>"; };
+		A697030321797E260027C1C2 /* soakedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = soakedUITests.xctest; path = "/Users/colbytimm/Documents/Colby's Folder/Learning/Programming/Swift/soaked/build/Debug-iphoneos/soakedUITests.xctest"; sourceTree = "<absolute>"; };
+		A697030421797E260027C1C2 /* soaked WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "soaked WatchKit App.app"; path = "/Users/colbytimm/Documents/Colby's Folder/Learning/Programming/Swift/soaked/build/Debug-watchos/soaked WatchKit App.app"; sourceTree = "<absolute>"; };
+		A697030521797E260027C1C2 /* soaked WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; name = "soaked WatchKit Extension.appex"; path = "/Users/colbytimm/Documents/Colby's Folder/Learning/Programming/Swift/soaked/build/Debug-watchos/soaked WatchKit Extension.appex"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,7 +228,7 @@
 			);
 			name = soakedTests;
 			productName = soakedTests;
-			productReference = A67D0CAD2171476D009D3C61 /* soakedTests.xctest */;
+			productReference = A697030221797E260027C1C2 /* soakedTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		A60D0A8021325C3E001ED3CF /* soakedUITests */ = {
@@ -246,7 +246,7 @@
 			);
 			name = soakedUITests;
 			productName = soakedUITests;
-			productReference = A67D0CAE2171476D009D3C61 /* soakedUITests.xctest */;
+			productReference = A697030321797E260027C1C2 /* soakedUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 		A60D0A8921325C3E001ED3CF /* soaked WatchKit App */ = {
@@ -263,7 +263,7 @@
 			);
 			name = "soaked WatchKit App";
 			productName = "soaked WatchKit App";
-			productReference = A67D0CAF2171476D009D3C61 /* soaked WatchKit App.app */;
+			productReference = A697030421797E260027C1C2 /* soaked WatchKit App.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
 		A60D0A9821325C3F001ED3CF /* soaked WatchKit Extension */ = {
@@ -280,7 +280,7 @@
 			);
 			name = "soaked WatchKit Extension";
 			productName = "soaked WatchKit Extension";
-			productReference = A67D0CB02171476D009D3C61 /* soaked WatchKit Extension.appex */;
+			productReference = A697030521797E260027C1C2 /* soaked WatchKit Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */

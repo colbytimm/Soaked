@@ -17,7 +17,7 @@ struct WeatherItem {
     var condition: String
     var highTemp: String
     var lowTemp: String
-    
+    var pop: String
 }
 
 // Download XML from Environment Canada
@@ -63,6 +63,11 @@ class WeatherParser: NSObject, XMLParserDelegate {
             currentLowTemp = currentLowTemp.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         }
     }
+    private var currentPop: String = "" {
+        didSet {
+            currentPop = currentPop.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        }
+    }
     
     private var parseCompletionHandler: (([WeatherItem]) -> Void)?
     
@@ -95,6 +100,7 @@ class WeatherParser: NSObject, XMLParserDelegate {
             currentCondition = ""
             currentHighTemp = ""
             currentLowTemp = ""
+            currentPop = ""
         }
     }
     
@@ -109,7 +115,7 @@ class WeatherParser: NSObject, XMLParserDelegate {
     
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         if elementName == "entry" {
-            let weatherItem = WeatherItem(title: currentTitle, date: currentDate, summary: currentSummary, condition: currentCondition, highTemp: currentHighTemp, lowTemp: currentLowTemp)
+            let weatherItem = WeatherItem(title: currentTitle, date: currentDate, summary: currentSummary, condition: currentCondition, highTemp: currentHighTemp, lowTemp: currentLowTemp, pop: currentPop)
             self.weatherItems.append(weatherItem)
         }
     }
@@ -126,6 +132,7 @@ class WeatherParser: NSObject, XMLParserDelegate {
         currentCondition = currentTitle.slice(from: ": ", to: ".") ?? "-"
         currentLowTemp = currentTitle.slice(from: "Low ", to: ".") ?? "-"
         currentHighTemp = currentTitle.slice(from: "High ", to: ".") ?? "-"
+        currentPop = currentTitle.slice(from: "POP ", to: ".") ?? ""
     }
         
 }

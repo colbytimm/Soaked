@@ -39,37 +39,6 @@ class MainWeatherTableViewCell: UITableViewCell {
             }
             weatherTypeLbl?.text = condition
             
-            let sunset = 19
-            let sunrise = 7
-            
-            let date = Date()
-            let calendar = Calendar.current
-            //let month = calendar.component(.month, from: date)
-            let hour = calendar.component(.hour, from: date)
-            //let minutes = calendar.component(.minute, from: date)
-            
-            // CHECK NIGHT
-            if (hour >= sunset && hour <= sunrise) && isFall() {
-                let image = UIImage(named: "fall_night_background")
-                backgroundImg?.image = image
-            }
-            if (hour >= sunset && hour <= sunrise) && (condition?.lowercased().range(of: "cloud") != nil || condition?.lowercased().range(of: "cloudy") != nil) {
-                let image = UIImage(named: "cloudy_night_background")
-                backgroundImg?.image = image
-            }
-            if (hour >= sunset && hour <= sunrise) && (condition?.lowercased().range(of: "rain") != nil || condition?.lowercased().range(of: "raining") != nil) {
-                let image = UIImage(named: "rain_night_background")
-                backgroundImg?.image = image
-            }
-            if (hour >= sunset && hour <= sunrise) && (condition?.lowercased().range(of: "snow") != nil || condition?.lowercased().range(of: "snowing") != nil) {
-                let image = UIImage(named: "snow_night_background")
-                backgroundImg?.image = image
-            }
-            if (hour >= sunset && hour <= sunrise) {
-                let image = UIImage(named: "clear_night_background")
-                backgroundImg?.image = image
-            }
-            
             // CHECK DAY
             if isFall() {
                 let image = UIImage(named: "fall_background")
@@ -85,6 +54,28 @@ class MainWeatherTableViewCell: UITableViewCell {
             }
             if condition?.lowercased().range(of: "snow") != nil || condition?.lowercased().range(of: "snowing") != nil {
                 let image = UIImage(named: "snow_background")
+                backgroundImg?.image = image
+            }
+            
+            // CHECK NIGHT
+            if isNight() {
+                let image = UIImage(named: "clear_night_background")
+                backgroundImg?.image = image
+            }
+            if isNight() && isFall() {
+                let image = UIImage(named: "fall_night_background")
+                backgroundImg?.image = image
+            }
+            if isNight() && (condition?.lowercased().range(of: "cloud") != nil || condition?.lowercased().range(of: "cloudy") != nil) {
+                let image = UIImage(named: "cloudy_night_background")
+                backgroundImg?.image = image
+            }
+            if isNight() && (condition?.lowercased().range(of: "rain") != nil || condition?.lowercased().range(of: "raining") != nil) {
+                let image = UIImage(named: "rain_night_background")
+                backgroundImg?.image = image
+            }
+            if isNight() && (condition?.lowercased().range(of: "snow") != nil || condition?.lowercased().range(of: "snowing") != nil) {
+                let image = UIImage(named: "snow_night_background")
                 backgroundImg?.image = image
             }
         }
@@ -127,6 +118,25 @@ class MainWeatherTableViewCell: UITableViewCell {
         else {
             return false
         }
+    }
+    
+    func isNight() -> Bool {
+        let sunset = 19
+        let sunrise = 7
+        
+        let date = Date()
+        let calendar = Calendar.current
+        //let month = calendar.component(.month, from: date)
+        let hour = calendar.component(.hour, from: date)
+        //let minutes = calendar.component(.minute, from: date)
+        
+        if hour >= sunset || hour <= sunrise {
+            return true
+        }
+        else {
+            return false
+        }
+        
     }
 
 }

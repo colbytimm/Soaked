@@ -19,14 +19,8 @@ class WeatherTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var conditionLbl: UILabel!
     @IBOutlet weak var highTempLbl: UILabel!
-    @IBOutlet weak var lowTempLbl: UILabel!
-    @IBOutlet weak var summaryLabel: UILabel! {
-        didSet {
-            summaryLabel.numberOfLines = 4
-        }
-    }
+    @IBOutlet weak var popLbl: UILabel!
     
-    private var currentWeatherItemsDict: [String:String]?
     //private var new = UserDefaults.standard.dictionary(forKey: "futureWeather")
     
     var item: WeatherItem! {
@@ -34,17 +28,14 @@ class WeatherTableViewCell: UITableViewCell {
             if item?.title != nil {
                 let title = item?.title
                 let condition = item?.condition
+                let pop = item?.pop
                 var highTemp = item?.highTemp
                 var lowTemp = item?.lowTemp
                 
                 titleLabel.text = trimString(title: title!)
                 conditionLbl.text = condition
+                popLbl.text = pop
                 
-                if let dotRange = highTemp?.range(of: "except") {
-                    var str = highTemp
-                    str!.removeSubrange(dotRange.lowerBound..<str!.endIndex)
-                    highTempLbl.text = str
-                }
                 if highTemp?.range(of: "minus") != nil {
                     highTemp = highTemp?.replacingOccurrences(of: "minus", with: "-")
                     highTemp = highTemp?.replacingOccurrences(of: " ", with: "")
@@ -69,9 +60,25 @@ class WeatherTableViewCell: UITableViewCell {
                     lowTemp = lowTemp?.replacingOccurrences(of: "zero", with: "0")
                     lowTemp = lowTemp?.replacingOccurrences(of: " ", with: "")
                 }
-                
-                highTempLbl.text = highTemp
-                lowTempLbl.text = lowTemp
+                if highTemp == "-" {
+                    highTempLbl.text = lowTemp
+                    //highTempLbl.textColor = UIColor.init(displayP3Red: 233.0, green: 93.0, blue: 63.0, alpha: 1.0)
+                    highTempLbl.textColor = UIColor.blue
+                }
+                else {
+                    highTempLbl.text = highTemp
+                    highTempLbl.textColor = UIColor.red
+                }
+                if let dotRange = highTemp?.range(of: "except") {
+                    var str = highTemp
+                    str!.removeSubrange(dotRange.lowerBound..<str!.endIndex)
+                    highTempLbl.text = str
+                }
+                if let dotRange = lowTemp?.range(of: "except") {
+                    var str = lowTemp
+                    str!.removeSubrange(dotRange.lowerBound..<str!.endIndex)
+                    highTempLbl.text = str
+                }
                 
                 // Set condition images for each cell
                 if (condition?.lowercased().range(of: "cloud") != nil || condition?.lowercased().range(of: "cloudy") != nil) && title?.lowercased().range(of: "night") != nil {
@@ -125,20 +132,6 @@ class WeatherTableViewCell: UITableViewCell {
             }
         }
     }
-    
-//    var futureItem: FutureWeatherItem! {
-//        didSet {
-//            if futureItem?.condition != nil {
-//                conditionLbl.text = futureItem?.condition
-//            }
-//            if futureItem?.highTemp != nil {
-//                highTempLbl.text = futureItem?.highTemp
-//            }
-//            if futureItem?.lowTemp != nil {
-//                lowTempLbl.text = futureItem?.lowTemp
-//            }
-//        }
-//    }
     
     func trimString(title: String) -> String {
         var str = title
