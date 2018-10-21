@@ -102,40 +102,41 @@ class WeatherTableViewController: UITableViewController {
     ////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////
     
-//    private func fetchDataForecast() {
-//        let feedDayParser = DayWeatherParser()
-//        feedDayParser.parseWeather(url: "http://dd.weather.gc.ca/citypage_weather/xml/BC/s0000141_e.xml") { (hourlyForecastItems) in
-//            self.hourlyForecastItems = hourlyForecastItems
-//
-//            let query = self.hourlyForecastItems![1].date
-//            //self.hourlyForecastItems?.remove(at: 1)
-//
-//            self.currentWeatherItemsDict = self.getDayValue(query: query, terms: self.termList)
-//            UserDefaults.standard.set(self.currentWeatherItemsDict, forKey: "currentDayWeather")
-//
-//            OperationQueue.main.addOperation {
-//                self.tableView.reloadSections(IndexSet(integer: 0), with: .left)
-//            }
-//        }
-//    }
-//
-//    // Returns dictionary of current weather condition parameters
-//    private func getDayValue(query: String, terms: [String]) -> [String:String] {
-//        var resultsDict: [String: String] = [:]
-//        for item in terms {
-//            var pattern = item
-//            pattern = item + ":(.*?)\n"
-//            let regex = try! NSRegularExpression(pattern:pattern, options: [])
-//
-//            regex.enumerateMatches(in: query, options: [], range: NSMakeRange(0, query.utf16.count)) { result, flags, stop in
-//                if let r = result?.range(at: 1), let range = Range(r, in: query) {
-//                    resultsDict[item] = String(query[range])
-//
-//                }
-//            }
-//        }
-//        return resultsDict
-//    }
+    private func fetchDataForecast() {
+        let feedDayParser = DayWeatherParser()
+        feedDayParser.parseWeather(url: "http://dd.weather.gc.ca/citypage_weather/xml/BC/s0000141_e.xml") { (hourlyForecastItems) in
+            self.hourlyForecastItems = hourlyForecastItems
+
+            let query = self.hourlyForecastItems![1].date
+            //self.hourlyForecastItems?.remove(at: 1)
+
+            self.currentWeatherItemsDict = self.getDayValue(query: query, terms: self.termList)
+            UserDefaults.standard.set(self.currentWeatherItemsDict, forKey: "currentDayWeather")
+
+            OperationQueue.main.addOperation {
+                self.tableView.reloadSections(IndexSet(integer: 0), with: .left)
+            }
+        }
+    }
+
+    // Returns dictionary of current weather condition parameters
+    private func getDayValue(query: String, terms: [String]) -> [String:String] {
+        var resultsDict: [String: String] = [:]
+        for item in terms {
+            var pattern = item
+            pattern = item + ":(.*?)\n"
+            let regex = try! NSRegularExpression(pattern:pattern, options: [])
+
+            regex.enumerateMatches(in: query, options: [], range: NSMakeRange(0, query.utf16.count)) { result, flags, stop in
+                if let r = result?.range(at: 1), let range = Range(r, in: query) {
+                    resultsDict[item] = String(query[range])
+                    print(String(query[range]))
+
+                }
+            }
+        }
+        return resultsDict
+    }
     
     ////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////

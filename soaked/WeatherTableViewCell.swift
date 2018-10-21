@@ -34,7 +34,14 @@ class WeatherTableViewCell: UITableViewCell {
                 
                 titleLabel.text = trimString(title: title!)
                 conditionLbl.text = condition
-                popLbl.text = pop
+                
+                if pop == "" {
+                    popLbl.text = "POP: 0%"
+                }
+                else {
+                    popLbl.text = "POP: " + pop!
+                }
+                
                 
                 if highTemp?.range(of: "minus") != nil {
                     highTemp = highTemp?.replacingOccurrences(of: "minus", with: "-")
